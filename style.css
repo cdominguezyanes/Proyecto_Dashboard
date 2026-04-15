@@ -159,3 +159,16 @@ li.completed {
   background: #d4ede3; /* verde suave */
   text-decoration: line-through;
 }
+
+.pin-btn {
+   background-color: #061824;
+   color: white;
+   border: none;
+   padding: 5px 10px;
+   cursor: pointer;
+   margin-right: 5px;
+}
+
+.pin-btn:hover {
+   background-color: #2980b9;
+}

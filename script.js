@@ -112,14 +112,55 @@ function renderTasks() {
       deleteButton.textContent = "Eliminar";
       deleteButton.classList.add("delete-btn");
 
+      const editButton = document.createElement("button");
+      editButton.textContent = "Editar";
+      editButton.classList.add("edit-btn");
+
+      // 📌 BOTÓN FIJAR
+      const pinButton = document.createElement("button");
+      pinButton.textContent = "📌 Fijar";
+      pinButton.classList.add("pin-btn");
+
       if (task.completed) {
          taskItem.classList.add("completed");
       }
 
+      // 🟢 Eliminar
       deleteButton.addEventListener("click", () => deleteTask(index));
+
+      // 🟢 Completar
       checkbox.addEventListener("change", () => {
          tasks[index].completed = checkbox.checked;
          taskItem.classList.toggle("completed", checkbox.checked);
+         saveTasks();
+         renderTasks();
+      });
+
+      // 🟡 Editar
+      editButton.addEventListener("click", () => {
+         const inputEdit = document.createElement("input");
+         inputEdit.type = "text";
+         inputEdit.value = task.text;
+
+         taskLeft.replaceChild(inputEdit, span);
+         inputEdit.focus();
+
+         inputEdit.addEventListener("blur", () => {
+            const nuevoTexto = inputEdit.value.trim();
+
+            if (nuevoTexto.length >= 5) {
+               tasks[index].text = nuevoTexto;
+               saveTasks();
+            }
+
+            renderTasks();
+         });
+      });
+
+      // 🔵 FIJAR ARRIBA
+      pinButton.addEventListener("click", () => {
+         const tareaFijada = tasks.splice(index, 1)[0]; // quitar
+         tasks.unshift(tareaFijada); // poner al inicio
          saveTasks();
          renderTasks();
       });
@@ -129,11 +170,16 @@ function renderTasks() {
 
       const dateSpan = document.createElement("span");
       dateSpan.classList.add("task-date");
-      dateSpan.textContent = "Creada: " + new Date().toLocaleDateString();
+      dateSpan.textContent = "Creada: " + task.date;
       taskLeft.appendChild(dateSpan);
+      dateSpan.textContent = "Creada: " + (task.date || "Sin fecha");
 
+      // 🔥 Agregar botones
       taskItem.appendChild(taskLeft);
+      taskItem.appendChild(pinButton);
+      taskItem.appendChild(editButton);
       taskItem.appendChild(deleteButton);
+
       taskList.appendChild(taskItem);
    });
    updateStats();
@@ -169,7 +215,11 @@ function addTask(taskText) {
    // Si todo está correcto, limpiar mensaje
    message.textContent = "";
 
-   const newTask = { text: taskText, completed: false };
+   const newTask = {
+   text: taskText,
+   completed: false,
+   date: new Date().toLocaleDateString()
+};
    tasks.push(newTask);
    saveTasks();
    renderTasks();
@@ -191,4 +241,3 @@ function deleteAllTasks() {
    saveTasks();
    renderTasks();
 }
-
