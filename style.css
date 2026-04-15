@@ -172,3 +172,144 @@ li.completed {
 .pin-btn:hover {
    background-color: #2980b9;
 }
+
+.gif {
+  width: 150px;
+  display: block;
+  margin: 10px 0;
+  margin-left: auto;
+}
+
+.contenedor {
+  display: flex;
+  justify-content: space-between; /* separa izquierda y derecha */
+  align-items: center;
+}
+
+body {
+  background: linear-gradient(135deg, #8a0253, #2b0033);
+  font-family: Arial, sans-serif;
+}
+
+.task {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 15px;
+  margin: 10px 0;
+  color: white;
+}
+
+.task {
+  animation: aparecer 0.3s ease;
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+button {
+  background: #6a0dad;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #9b30ff;
+  transform: scale(1.05);
+}
+
+.barra {
+  width: 100%;
+  height: 10px;
+  background: #ccc;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+#progreso {
+  height: 100%;
+  width: 0%;
+  background: limegreen;
+  border-radius: 10px;
+}
+
+img {
+  transition: transform 0.3s;
+}
+
+img:hover {
+  transform: scale(1.1) rotate(2deg);
+}
+
+h1 {
+  text-shadow: 0 0 10px #ff00ff;
+}
+
+.arriba-izq {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  width: 100px;
+}
+
+.arriba-der {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 100px;
+}
+
+.abajo-izq {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  width: 100px;
+}
+
+.abajo-der {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 100px;
+}
+
+
+
+
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.task {
+  background: #e6dfe6;
+  border-radius: 15px;
+  padding: 15px;
+  margin: 15px 0;
+  transition: 0.3s;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.task:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+header {
+  margin-bottom: 30px;
+}
+

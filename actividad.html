@@ -4,21 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>📝Dashboard de Tareas</title>
+    <title>📝Dashboard de Tareas📝</title>
 </head>
 <body>
 
     <header class="header">
-        <h1>📝Dashboard de Tareas</h1>
-        <img src="C:\Users\Carlos Dominguez\Downloads\tarea\Dominguezyanes_2doCuatrimestre\Programacion por computadora\Actividad\antherman.jpeg" 
-             alt="antherman" width="100" height="100">
+        <h1>🔥Dashboard de Tareas🔥</h1>
+        <img src="C:\Users\Carlos Dominguez\Downloads\tarea\Dominguezyanes_2doCuatrimestre\Programacion por computadora\Actividad\araña.gif" 
+             alt="araña" width="100" height="100">
     </header>
+
+    <img src="c:\Users\Carlos Dominguez\Downloads\tarea\Dominguezyanes_2doCuatrimestre\Programacion por computadora\Actividad\ghost.gif" class="arriba-izq">
+    <img src="c:\Users\Carlos Dominguez\Downloads\tarea\Dominguezyanes_2doCuatrimestre\Programacion por computadora\Actividad\dragon.gif" class="arriba-der">
+    <img src="c:\Users\Carlos Dominguez\Downloads\tarea\Dominguezyanes_2doCuatrimestre\Programacion por computadora\Actividad\magma.gif" class="abajo-izq">
+    <img src="c:\Users\Carlos Dominguez\Downloads\tarea\Dominguezyanes_2doCuatrimestre\Programacion por computadora\Actividad\blaze.gif" class="abajo-der">
 
     <main class="container">
         <input type="text" id="taskInput" placeholder="Escribe una tarea">
-        <button id="addTaskBtn">Agregar</button>
-        <button id="completeAll">Marcar todas completadas</button>
-        <button onclick="deleteAllTasks()">Borrar todas las tareas</button>
+        <button id="addTaskBtn">➕ Agregar</button>
+        <button id="completeAll">✔️ Marcar todas completadas</button>
+        <button onclick="deleteAllTasks()">🗑️ Borrar todas las tareas</button>
 
         <!-- Mensajes de validación -->
         <p id="message" style="color:red; font-weight:bold;"></p>
@@ -42,6 +47,9 @@
         </section>
     </main>
 
+    <div class="barra">
+  <div id="progreso"></div>
+</div>
     <!-- Conexión con el archivo JavaScript -->
     <script src="script.js"></script>
 </body>
