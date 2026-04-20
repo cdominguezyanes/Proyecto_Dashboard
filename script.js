@@ -241,3 +241,26 @@ function deleteAllTasks() {
    saveTasks();
    renderTasks();
 }
+
+
+// Botón de modo oscuro
+const darkModeBtn = document.getElementById("darkModeBtn");
+
+darkModeBtn.addEventListener("click", function() {
+   document.body.classList.toggle("dark-mode");
+
+   // Guardar preferencia en LocalStorage
+   if (document.body.classList.contains("dark-mode")) {
+      localStorage.setItem("theme", "dark");
+   } else {
+      localStorage.setItem("theme", "light");
+   }
+});
+
+// Al cargar la página, aplicar preferencia guardada
+window.addEventListener("load", function() {
+   const theme = localStorage.getItem("theme");
+   if (theme === "dark") {
+      document.body.classList.add("dark-mode");
+   }
+});
