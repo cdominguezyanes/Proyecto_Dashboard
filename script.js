@@ -225,7 +225,6 @@ function addTask(taskText) {
    renderTasks();
 }
 
-
 function createTask() {
    addTask(input.value.trim());
    input.value = "";
@@ -241,7 +240,6 @@ function deleteAllTasks() {
    saveTasks();
    renderTasks();
 }
-
 
 // Botón de modo oscuro
 const darkModeBtn = document.getElementById("darkModeBtn");
